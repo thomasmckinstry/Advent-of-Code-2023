@@ -66,8 +66,7 @@ def part2(input_arr):
                 picked_num = int(entry[1:space_index])
                 blocks_num = blocks_dict[entry[space_index: len(entry)]]
 
-                if (picked_num > blocks_num):
-                    blocks_dict[entry[space_index: len(entry)]] = picked_num #Set number of blocks if picked is greater than recorded
+                blocks_dict[entry[space_index: len(entry)]] = max(picked_num, blocks_num) #Set number of blocks if picked is greater than recorded
 
         blocks_power = (blocks_dict["red"] * blocks_dict["blue"] * blocks_dict["green"])
         sum += blocks_power
